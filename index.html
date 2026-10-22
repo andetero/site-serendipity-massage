@@ -67,9 +67,29 @@ footer{text-align:center;color:var(--muted);font-size:.88rem;padding:26px 24px 3
  .words blockquote:nth-child(even){padding-left:0}
  .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;text-align:center;z-index:9;box-shadow:0 10px 28px var(--shadow)}
 }
+picture.ph{display:block}picture.ph img{display:block;width:100%;height:auto}
+.calm{max-width:980px;margin:0 auto 64px;padding:0 24px}
+.calm picture{border-radius:4px;overflow:hidden}
+.calm picture img{height:clamp(220px,38vw,420px);object-fit:cover}
+.svc.d{grid-template-columns:1fr 1fr}
+.svc.d li span{display:block;font-family:Karla,system-ui,sans-serif;font-size:.92rem;line-height:1.45;color:var(--muted);margin-top:2px}
+.story{max-width:980px;margin:0 auto 70px;padding:0 24px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:48px;align-items:start}
+.story h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:2.1rem;margin:0 0 12px}
+.story p{margin:0 0 14px;font-size:1.08rem}
+.story .pics{display:grid;gap:18px}
+.story .pics picture{border-radius:4px;overflow:hidden}
+.story .pics picture:first-child{width:86%}
+.story .pics picture:last-child{width:70%;margin-left:auto}
+.where .area{color:var(--muted)}
+.close{text-align:center;padding:60px 24px 64px;border-top:1px solid var(--line)}
+.close h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:2.3rem;margin:0 0 6px}
+.close p{color:var(--muted);margin:0 0 24px}
+@media (max-width:760px){.story{grid-template-columns:1fr;gap:28px}.story .pics{grid-template-columns:1fr 1fr}.story .pics picture:first-child,.story .pics picture:last-child{width:100%}}
+@media (max-width:520px){.svc.d{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<!-- Placeholder photos: royalty-free stock images (Unsplash License, details in CREDITS.md). They are not of this business. Replace them with the client's own real photos before handoff. -->
 <header class="bar">
  <a class="nm" href="#">Serendipity Massage</a>
  <span class="open">Open every day, 9 AM &ndash; 9 PM &middot; <a href="tel:+13039940240">(303) 994-0240</a></span>
@@ -89,13 +109,34 @@ footer{text-align:center;color:var(--muted);font-size:.88rem;padding:26px 24px 3
  </div>
 </section>
 
+<div class="calm"><picture class="ph"><source type="image/webp" srcset="img/hero.webp"><img src="img/hero.jpg" width="1600" height="800" alt="A stack of rolled white towels on a wooden surface" fetchpriority="high" decoding="async"></picture></div>
+
 <section class="menu" aria-labelledby="menu-h">
  <h2 id="menu-h">Massages</h2>
  <p class="note">As listed on the studio&rsquo;s own website and booking page.</p>
  <h3 class="lbl">Services</h3>
- <ul class="svc">
-  <li>Full body</li><li>Deep tissue</li><li>Couples</li><li>Hot stone</li><li>Head &amp; neck</li><li>Foot</li><li>Therapeutic</li><li>Cupping</li>
+ <ul class="svc d">
+  <li>Full body<span>A full-body massage to relax and ease tension.</span></li>
+  <li>Deep tissue<span>Firmer pressure for deeper muscle tension.</span></li>
+  <li>Couples<span>Massage for two, booked together.</span></li>
+  <li>Hot stone<span>Massage with smooth, warm stones.</span></li>
+  <li>Head &amp; neck<span>Focused on the head and neck.</span></li>
+  <li>Foot<span>A massage focused on the feet.</span></li>
+  <li>Therapeutic<span>Aimed at stress and muscle tension.</span></li>
+  <li>Cupping<span>Cupping therapy.</span></li>
  </ul>
+</section>
+
+<section class="story" aria-labelledby="ab-h">
+ <div>
+  <h2 id="ab-h">About the studio</h2>
+  <p>Serendipity Massage LLC is a massage studio on South Parker Road in Parker, open every day from 9 AM to 9 PM. Appointments are encouraged and walk-ins are accepted.</p>
+  <p>Massage therapy can help you relax and reduce stress and muscle tension throughout the body. The studio offers full body, deep tissue, couples, hot stone, head and neck, foot and therapeutic massage, plus cupping.</p>
+ </div>
+ <div class="pics">
+  <picture class="ph"><source type="image/webp" srcset="img/a.webp"><img src="img/a.jpg" width="900" height="675" alt="A clear glass bottle with a cork on a wooden board" loading="lazy" decoding="async"></picture>
+  <picture class="ph"><source type="image/webp" srcset="img/b.webp"><img src="img/b.jpg" width="900" height="1200" alt="A lit candle in a glass on a small wooden table" loading="lazy" decoding="async"></picture>
+ </div>
 </section>
 
 <section class="words" aria-labelledby="w-h">
@@ -118,9 +159,18 @@ footer{text-align:center;color:var(--muted);font-size:.88rem;padding:26px 24px 3
    <address>12543 S Parker Rd, Unit 222<br>Parker, CO 80134</address>
    <p><b>Hours:</b> every day, 9 AM &ndash; 9 PM</p>
    <p><b>Phone:</b> <a href="tel:+13039940240">(303) 994-0240</a></p>
-   <p style="margin-top:20px"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=12543%20S%20Parker%20Rd%20Unit%20222%2C%20Parker%2C%20CO%2080134" target="_blank" rel="noopener">Directions</a></p>
+   <p class="area">On South Parker Road in Parker, Douglas County, Colorado.</p>
   </div>
   <div class="map"><iframe title="Map of 12543 S Parker Rd, Parker, CO" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=12543%20S%20Parker%20Rd%20Unit%20222%2C%20Parker%2C%20CO%2080134&amp;z=15&amp;output=embed"></iframe></div>
+ </div>
+</section>
+
+<section class="close" aria-labelledby="c-h">
+ <h2 id="c-h">Book a massage</h2>
+ <p>Call (303) 994-0240 &middot; open every day, 9 AM &ndash; 9 PM</p>
+ <div class="acts">
+  <a class="btn" href="tel:+13039940240">Call (303) 994-0240</a>
+  <a class="btn out" href="https://www.google.com/maps/dir/?api=1&amp;destination=12543%20S%20Parker%20Rd%20Unit%20222%2C%20Parker%2C%20CO%2080134" target="_blank" rel="noopener">Directions</a>
  </div>
 </section>
 </main>
